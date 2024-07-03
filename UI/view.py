@@ -22,10 +22,15 @@ class View(ft.UserControl):
         self._page.controls.append(self._title)
 
         #ROW with controls
-        self._txtAnno = ft.TextField(label="Anno")
-        self._btnCalcola = ft.ElevatedButton(text="Calcola Confini", on_click=self._controller.handleCalcola)
+        self._txtAnno = ft.TextField(label="Anno",width=200)
+        self._btnCalcola = ft.ElevatedButton(text="Calcola Confini", on_click=self._controller.handleCalcola,width=200)
         row1 = ft.Row([self._txtAnno, self._btnCalcola], alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row1)
+        #row2
+        self._ddStato=ft.Dropdown(label="Stato",options=[], disabled=True,width=200)
+        self._btnCalcolaRaggiungibili = ft.ElevatedButton(text="Calcola Raggiungibili",on_click=self._controller.handleRaggiungibili,disabled=True, width=200)
+        row2 = ft.Row([self._ddStato,self._btnCalcolaRaggiungibili],alignment=ft.MainAxisAlignment.CENTER)
+        self._page.controls.append(row2)
         # List View where the reply is printed
         self._txt_result = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=False)
         self._page.controls.append(self._txt_result)
