@@ -14,6 +14,7 @@ class View(ft.UserControl):
         # graphical elements
         self._title = None
 
+
         self._txt_result = None
 
     def load_interface(self):

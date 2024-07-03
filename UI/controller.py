@@ -50,6 +50,7 @@ class Controller:
         self._view.update_page()
 
 
+
     def readStato(self,e):
         if e.control.data is None:
             self._stato = None

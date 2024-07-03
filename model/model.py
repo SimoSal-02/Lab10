@@ -24,6 +24,7 @@ class Model:
         self._gradi = dict(self._grafo.degree)
         return nx.number_connected_components(self._grafo) , dict(sorted(self._gradi.items(), key=lambda x: x[0]))
 
+
     def cercaRaggiungibili(self,stato):
         tic = time()
         nodi = self.getDFSNodes(stato)
